@@ -1,0 +1,166 @@
+﻿body{
+	background-color: lightgray;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+h1,h2,h3{
+	font-family: initial;
+}
+#wrapper{
+	width: 1200px;
+	color: black;
+	margin: 0 auto;
+	text-align: center;
+}
+header{
+	height: 45px;
+	background-color: #686666
+}
+.logo{
+	height: 45px;
+	display: inline-block;
+	margin-top: 0px;
+	float: right;
+}
+ul {
+	padding: 0;
+	background-color: black;
+	float: left;
+	margin-top: 0px;
+}
+
+li {
+	width: 130px;
+	display: inline-block;
+	font-size: 20px;
+	height: 45px;
+	border-right: 1px;
+	border-right-style: solid;
+}
+.active{
+	background-color: #bfbfbf;
+	color: black;
+	text-decoration: none;
+}
+.listentext{
+	text-decoration: none;
+	color: white;
+}
+.innereliste{
+	margin-top: 22px;
+}
+
+li:hover{
+	background-color: grey;
+}
+
+li .innereliste {
+	position: absolute;
+	display: none;
+}
+
+li:hover .innereliste {
+	display: block;
+}
+
+li .innereliste li {
+	display: block;
+}
+main{
+	clear: both;
+	background-color: #f7f7f7;
+	height: 500px;
+}
+.titel{
+	border-bottom: 1px;
+	border-bottom-style: solid;
+
+}
+.pingu{
+	width:300px;
+	float: left;
+	margin-top: 50px;
+}
+
+footer{
+	background-color: black;
+	height:80px;
+}
+#copyright{
+	width: 33%;
+	float: left;
+	color: white;
+	margin-top: 20px;
+	border-right: 2px;
+	border-right-style: solid;
+}
+#kontaktinfos{
+	width: 66%;
+	float: right;
+	color: white;
+	
+}
+.email{
+	text-decoration: none;
+	color: white;
+}
+.email:hover{
+	color: #fc5c50;
+	text-decoration: underline;
+}
+
+/*Unterteilung für Infos*/
+
+.pinguine{
+	width: 400px;
+}
+.infotext{
+	font-size: 17px;
+	border: 1px;
+	border-style: solid;
+
+}
+/*Unterteilung für Arten*/
+.gallerie{
+	margin: 5px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 180px;
+	
+}
+.gallerie:hover {
+    border: 1px solid #777;
+}
+.gallerie img {
+    width: 100%;
+    height: auto;
+}
+.beschreibung{
+	padding: 15px;
+	text-align: center;	
+}
+.zusatz_arten{
+	clear: both;
+}
+#gallerie{
+	margin-left: 310px;
+}
+
+/*Unterteilung für Lebensraum*/
+#tabelle{
+	margin-left: 510px;
+	border: 1px;
+	border-style: solid;
+}
+td{
+text-align: right;
+}
+/*Unterteilung für Kontakt*/
+#mitteilung{
+	margin-top: 150px;
+	border: 1px;
+	border-style: solid;
+}
+.danke_pinguin{
+	margin: 100px;
+	height: 200px;
+}
