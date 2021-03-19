@@ -1,8 +1,0 @@
-[Unit]
-Description=api
-
-[Service]
-ExecStart=/home/vagrant/main.py
-
-[Install]
-WantedBy=multi-user.target
