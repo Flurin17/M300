@@ -26,11 +26,11 @@ class randomZahl(Resource):
 class errorCodes(Resource):
     def get(self, errorCode):
         return {"ErrorCode": errorCode}, errorCode
-api.add_resource(HelloWorld, "/hello/")
-api.add_resource(malrechnen, "/rechnen/<int:num>*<int:mal>")
-api.add_resource(randomZahl, "/random/<int:min>-<int:max>")
-api.add_resource(greetings, "/")
-api.add_resource(errorCodes, "/status/<int:errorCode>")
+api.add_resource(HelloWorld, "api/hello/")
+api.add_resource(malrechnen, "api/rechnen/<int:num>*<int:mal>")
+api.add_resource(randomZahl, "api/random/<int:min>-<int:max>")
+api.add_resource(greetings, "api/")
+api.add_resource(errorCodes, "api/status/<int:errorCode>")
 
 
 if __name__ == '__main__':
