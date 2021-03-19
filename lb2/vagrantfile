@@ -1,12 +1,13 @@
 Vagrant.configure("2") do |config|
   config.vm.define "apiServer" do |api|
     api.vm.hostname = "Apiserver"
-    api.vm.box = "ubuntu/xenial64"
-
+    api.vm.box = "generic/debian10"
+    api.vm.provision "file", source: "api/main.py", destination: "main.py"
     api.vm.provision "shell", path: "api.sh"
     api.vm.network "private_network", ip: "192.168.2.30"
     api.vm.network "forwarded_port", guest: 80, host: 9999, id: "Api", auto_correct: true
-    api.vm.synced_folder "api/", "/dev"
+
+
       
   end
 
