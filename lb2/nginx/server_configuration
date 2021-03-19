@@ -1,0 +1,10 @@
+
+server {
+    location /api/ {
+        proxy_pass http://192.168.2.30:80;
+    }
+
+    location / {
+        proxy_pass http://192.168.2.20:80;
+    }
+}
