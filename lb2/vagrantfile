@@ -6,7 +6,6 @@ Vagrant.configure("2") do |config|
     api.vm.provision "file", source: "api/main.py", destination: "main.py"
     api.vm.provision "shell", path: "api/api.sh"
     api.vm.network "private_network", ip: "192.168.2.30"
-    api.vm.network "forwarded_port", guest: 80, host: 9999, id: "Api", auto_correct: true
 
   end
 
@@ -27,7 +26,6 @@ Vagrant.configure("2") do |config|
 
     apache.vm.provision "shell", path: "webserver/webserver1.sh"
     apache.vm.network "private_network", ip: "192.168.2.20"
-    apache.vm.network "forwarded_port", guest: 80, host: 8008, id: "webserver1", auto_correct: true
     apache.vm.synced_folder "webserver/", "/var/www/html"
       
   end
