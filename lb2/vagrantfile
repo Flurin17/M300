@@ -1,5 +1,11 @@
-Vagrant.configure(2) do |config|
-    config.vm.box = "hashicorp/precise32"
-    config.vm.provision "shell", path: "provision.sh"
+Vagrant.configure("2") do |config|
+  config.vm.define "nginx" do |nginx|
+    nginx.vm.hostname = "nginx"
+    nginx.vm.box = "ubuntu/xenial64"
+    config.vm.provision "shell", path: "ngnix.sh"
     config.vm.network "forwarded_port", guest: 80, host: 8080, id: "nginx"
+    nginx.vm.network "private_network", ip: "192.168.2.11"
+
   end
+
+end
