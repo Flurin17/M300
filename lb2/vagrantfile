@@ -1,4 +1,15 @@
 Vagrant.configure("2") do |config|
+  config.vm.define "apiServer" do |api|
+    api.vm.hostname = "Apiserver"
+    api.vm.box = "ubuntu/xenial64"
+
+    api.vm.provision "shell", path: "api.sh"
+    api.vm.network "private_network", ip: "192.168.2.30"
+    api.vm.network "forwarded_port", guest: 80, host: 9999, id: "Api", auto_correct: true
+    api.vm.synced_folder "api/", "/dev"
+      
+  end
+
   config.vm.define "nginx" do |nginx|
     nginx.vm.hostname = "nginx"
     nginx.vm.box = "ubuntu/xenial64"
@@ -16,19 +27,8 @@ Vagrant.configure("2") do |config|
 
     apache.vm.provision "shell", path: "webserver1.sh"
     apache.vm.network "private_network", ip: "192.168.2.20"
-    apache.vm.network "forwarded_port", guest: 80, host: 8008, id: "webserver1"
+    apache.vm.network "forwarded_port", guest: 80, host: 8008, id: "webserver1", auto_correct: true
     apache.vm.synced_folder "webserver/", "/var/www/html"
-      
-  end
-
-  config.vm.define "apiServer" do |api|
-    api.vm.hostname = "Apiserver"
-    api.vm.box = "ubuntu/xenial64"
-
-    api.vm.provision "shell", path: "api.sh"
-    api.vm.network "private_network", ip: "192.168.2.30"
-    api.vm.network "forwarded_port", guest: 80, host: 9999, id: "Api"
-    api.vm.synced_folder "api/", "/dev"
       
   end
 
