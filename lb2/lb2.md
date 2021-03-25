@@ -33,7 +33,12 @@ Mein Vagrant Setup baut 3 verschiedene Server auf.
 
 
 ## Set up
-*Mein Vagrant File benötigt keine externen Änderungen*
+**Mein Vagrant File benötigt keine externen Änderungen**
+Heisst man muss die VMs nur mit Vagrant UP starten
+
+Der reverse Proxy kann nach dem Start unte: **http://192.168.2.10/** erreicht werden
+
+
 
 [webserver]: <https://www.apache.org/>
 [api]: <https://github.com/Flurin17/API>
