@@ -36,9 +36,16 @@ Mein Vagrant Setup baut 3 verschiedene Server auf.
 **Mein Vagrant File benötigt keine externen Änderungen**\
 Heisst man muss die VMs nur mit Vagrant UP starten
 
-Der reverse Proxy kann nach dem Start unte: **http://192.168.2.10/** erreicht werden
+Der reverse Proxy kann nach dem Start unter: **http://192.168.2.10/** erreicht werden
 
+Die anderen zwei Services können notfalls unter **http://192.168.2.20** für den Webserver und **http://192.168.2.30/api/** für die API erreicht werden
 
+## Testprotokoll
+| Nötige Eingabe /Aktion | Erwartetes Ergebnis | Tatsächliches Ergebnis |
+| ------ | ------ | ---- |
+| Vagrant up| Alle drei VMs Starten nacheinander | Alle drei VMs Starten nacheinander |
+| 192.168.2.10 im Browser eingeben| Es öffnet sich der nginx der direkt auf den Webserver weiterleitet |Es öffnet sich der nginx der direkt auf den Webserver weiterleitet |
+| 192.168.2.10/api im Browser eingeben | Die API öffnet sich und gibt Hello World zurück | Die API öffnet sich und gibt Hello World zurück |
 
 [webserver]: <https://www.apache.org/>
 [api]: <https://github.com/Flurin17/API>

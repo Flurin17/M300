@@ -2,9 +2,15 @@ Vagrant.configure("2") do |config|
   config.vm.define "apiServer" do |api|
     api.vm.hostname = "Apiserver"
     api.vm.box = "generic/debian10"
+
+    #Provisionig of Files into the VM
     api.vm.provision "file", source: "api/api.service", destination: "api.service"
     api.vm.provision "file", source: "api/main.py", destination: "main.py"
+    
+    #Startup shell script
     api.vm.provision "shell", path: "api/api.sh"
+
+    #Setting IP adress
     api.vm.network "private_network", ip: "192.168.2.30"
 
   end
@@ -12,11 +18,15 @@ Vagrant.configure("2") do |config|
   config.vm.define "nginx" do |nginx|
     nginx.vm.hostname = "nginx"
     nginx.vm.box = "ubuntu/xenial64"
-    #Startup shell script
+
+    #Startup shell script and provisioning of needed File
     nginx.vm.provision "file", source: "nginx/server_configuration", destination: "server_configuration"
     nginx.vm.provision "shell", path: "nginx/ngnix.sh"
+    
     #Creating Portforwarding for reverse proxy
     nginx.vm.network "forwarded_port", guest: 80, host: 8080, id: "nginx"
+
+    #Setting IP adress
     nginx.vm.network "private_network", ip: "192.168.2.10"
   end
 
@@ -24,7 +34,10 @@ Vagrant.configure("2") do |config|
     apache.vm.hostname = "Webserver"
     apache.vm.box = "ubuntu/xenial64"
 
+    #Startup shell script
     apache.vm.provision "shell", path: "webserver/webserver1.sh"
+    
+    #Setting IP adress
     apache.vm.network "private_network", ip: "192.168.2.20"
     apache.vm.synced_folder "webserver/", "/var/www/html"
       
