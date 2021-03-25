@@ -31,6 +31,10 @@ Mein Vagrant Setup baut 3 verschiedene Server auf.
 | API (python) | /api |
 | Webserver (apache) | / |
 
+
+## Set up
+*Mein Vagrant File benötigt keine externen Änderungen*
+
 [webserver]: <https://www.apache.org/>
 [api]: <https://github.com/Flurin17/API>
 [nginx]: <https://www.nginx.com/>
