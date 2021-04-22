@@ -1,59 +1,59 @@
 ---
-    version: "3"
-    services:
-        sonarr:
-            image: ghcr.io/linuxserver/plex
-            container_name: plex
-            environment:
-                - PUID=1000
-                - PGID=1000
-                - TZ=Europe/Zurich
-                - VERSION=docker
-            volumes:
-                - /path/to/library:/config
-                - /path/to/tvseries:/tv
-                - /path/to/movies:/movies
-            networks:
-                media_network:
-                    ipv4_address: 192.168.60.101
-            ports:
-                - 8080:80
-            restart: unless-stopped
-    
-        radarr:
-            image: ghcr.io/linuxserver/qbittorrent
-            container_name: qbittorrent
-            environment:
-                - PUID=1000
-                - PGID=1000
-                - TZ=Europe/Zurich
-                - WEBUI_PORT=81
-            volumes:
-                - /path/to/appdata/config:/config
-                - /path/to/downloads:/downloads
-            networks:
-                media_network:
-                    ipv4_address: 192.168.60.102
-            ports:
-                - 80:81
-                - 6881:6881
-                - 6881:6881/udp
-                
-            restart: unless-stopped
+version: "3"
+services:
+    plex:
+        image: ghcr.io/linuxserver/plex
+        container_name: plex
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Zurich
+        volumes:
+            - /path/to/library:/config
+            - /path/to/tvseries:/tv
+            - /path/to/movies:/movies
         
-        nginx:
-            build: proxy
-            networks:
-                media_network:
-                    ipv4_address: 192.168.60.100
-            ports:
-                - 80:80
-                - 443:443
+        networks:
+            media_network:
+                ipv4_address: 192.168.60.102
+        ports:
+            - 32400:32400
+        restart: unless-stopped
+
+    qbittorrent:
+        image: ghcr.io/linuxserver/qbittorrent
+        container_name: qbittorrent
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - TZ=Europe/Zurich
+            - WEBUI_PORT=81
+        volumes:
+            - /path/to/appdata/config:/config
+            - /path/to/downloads:/downloads
+        networks:
+            media_network:
+                ipv4_address: 192.168.60.103
+        ports:
+            - 81:81
+            - 6881:6881
+            - 6881:6881/udp
+            
+        restart: unless-stopped
     
-    networks:
-        media_network:
-            driver: bridge
-            ipam:
-                driver: default
-                config:
-                    - subnet: 192.168.60.0/24
+    nginx:
+        build: proxy
+        networks:
+            media_network:
+                ipv4_address: 192.168.60.101
+        ports:
+            - 80:80
+            - 443:443
+
+networks:
+    media_network:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.60.0/24
