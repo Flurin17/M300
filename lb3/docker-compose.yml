@@ -2,7 +2,7 @@
 version: "3"
 services:
     plex:
-        image: ghcr.io/linuxserver/plex
+        image: plexinc/pms-docker
         container_name: plex
         environment:
             - PUID=1000
