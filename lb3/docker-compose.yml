@@ -9,9 +9,9 @@ services:
             - PGID=1000
             - TZ=Europe/Zurich
         volumes:
-            - /path/to/library:/config
-            - /path/to/tvseries:/tv
-            - /path/to/movies:/movies
+            - /plex/library:/config
+            - /plex/tvseries:/tv
+            - /plex/movies:/movies
         
         networks:
             media_network:
@@ -29,8 +29,8 @@ services:
             - TZ=Europe/Zurich
             - WEBUI_PORT=81
         volumes:
-            - /path/to/appdata/config:/config
-            - /path/to/downloads:/downloads
+            - /torrent/config:/config
+            - /torrent/downloads:/downloads
         networks:
             media_network:
                 ipv4_address: 192.168.60.103
