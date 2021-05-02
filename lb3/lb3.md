@@ -33,7 +33,7 @@ Durch den Reverse Proxy können diese Systeme auf dem gleichen Docker angesproch
 FROM nginx:latest
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 ```
-* Hollt sich das nötige Image
+* Holt sich das nötige Image
 * Der zweite Command kopiert ein File in das Docker Image herein
 
 ### Netzwerkkonfiguration
