@@ -70,10 +70,21 @@ plex:
             - 32400:32400
         restart: unless-stopped
 ```
-* Wir setzen das erwünschte Image
-* Geben dem Container einen Namen
-* U, 
-* Das Subnetz wird ebenfalls gesetzt.
+* Image
+  * Wir setzen das erwünschte Image
+* Container Name
+  * Geben dem Container einen Namen
+* Environment
+  * PUID und PGID Sind Benutzer und Gruppe damit der Dienst nicht als Admin läuft
+  * TZ ist die Zeitzone
+* Volumes
+  * Hier werden die verschiedenen Speicherorte angegeben die persistent sind.
+* Networks
+  * Setzen die Netzwerkschnittstelle
+* Ports
+  * Geben die Ports frei. Links ist nach aussen und rechts die Ports im Docker selbst
+* Restart
+  * Gibt an, dass der Docker neustarten soll falls er zum Beispiel abgestürzt ist.
 
 
 
@@ -84,8 +95,8 @@ plex:
 | docker-compose up -d| Alle drei Docker starten gleichzeitig | Alle drei Docker starten gleichzeitig |
 | 192.168.60.101 im Browser eingeben| Es öffnet sich nichts, da man die richtigen Endpoints angeben muss | Die Website funktioniert nicht, da dass docker-compose im Bridge Modus läuft. Der Service kann unter 127.0.0.1 erreicht werden |
 | 127.0.0.1/torrent im Browser eingeben | Der Torrent Dienst öffnet sich und das Loginformular erscheint | Der Torrent Dienst öffnet sich und das Loginformular erscheint |
-| 127.0.0.1/plex im Browser eingeben | Der Plex Dienst öffnet sich und das Loginformular erscheint | Leider funktioniert dies nicht, da die Konfiguration des Docker Containers von Plex anders als normal ist. Unter <http://127.0.0.1/plex/web/index.html#!/> funktioniert es |
-
+| 127.0.0.1/plex im Browser eingeben | Der Plex Dienst öffnet sich und das Loginformular erscheint | Leider funktioniert dies nicht, da die Konfiguration des Docker Containers von Plex anders als normal ist. Unter <http://127.0.0.1/plex/web/index.html#!/> funktioniert es ||
+| docker-compose logs in Powershell eingeben| Zeigt alle Logs die in den Container erstellt worden sind an | Zeigt alle Logs die in den Container erstellt worden sind an |
 
 ## Quellenverzeichnis
 Grafik für Aufbau, <https://nexcon.ch/traefik-der-moderne-reverse-proxy/>, 2.5.2021
