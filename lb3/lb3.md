@@ -14,6 +14,7 @@
     - [Netzwerkkonfiguration](#netzwerkkonfiguration)
     - [Container im Docker Compose](#container-im-docker-compose)
   - [Testprotokoll](#testprotokoll)
+  - [Sicherheit](#sicherheit)
   - [Quellenverzeichnis](#quellenverzeichnis)
 
 ## Service Beschreibung
@@ -104,6 +105,13 @@ plex:
 | Benutzername: admin Passwort: TBZ123admin | Der Torrent Dienst öffnet sich und das Loginformular erscheint | Der Torrent Dienst öffnet sich und das Loginformular erscheint |
 | 127.0.0.1/plex im Browser eingeben | Der Plex Dienst öffnet sich und das Loginformular erscheint | Leider funktioniert dies nicht, da die Konfiguration des Docker Containers von Plex anders als normal ist. Unter <http://127.0.0.1/plex/web/index.html#!/> funktioniert es ||
 | docker-compose logs in Powershell eingeben| Zeigt alle Logs die in den Container erstellt worden sind an | Zeigt alle Logs die in den Container erstellt worden sind an |
+
+
+
+## Sicherheit
+Um eine gewisse Sicherheit zu bieten habe ich das Standardpasswort von QBittorent gewechselt.
+Benutzername: admin
+Passwort: adminadmin -> TBZ123admin
 
 ## Quellenverzeichnis
 Grafik für Aufbau, <https://nexcon.ch/traefik-der-moderne-reverse-proxy/>, 2.5.2021
