@@ -16,7 +16,7 @@ Mein Docker Compose verbindet verschiedene Webapplikationen. Folgende Applikatio
 | ------ | ------ |
 | [Nginx][nginx] | nginx:latest |
 | [Plex][plex] | plexinc/pms-docker:latest | 
-| [BitTorrent][bittorrent] | ghcr.io/linuxserver/qbittorrent:latest |
+| [qBitTorrent][bittorrent] | ghcr.io/linuxserver/qbittorrent:latest |
 ## Service Anwendungsbereich
 Der Service kann für verschiedene Anwendungen verwendet werden, da der Nginx Reverse Proxy server vielseitig einsetzbar ist und so unendlich viele Services über ein Knotenpunkt erreicht werden können.
 Mein Einsatzzweck hier ist jedoch ein kleines Entertainmentsystem, welches Abspielen von Filmen, etc. möglich macht und das Herunterladen dieser Filme durch einen Torrentclient.
@@ -104,4 +104,4 @@ Grafik für Aufbau, <https://nexcon.ch/traefik-der-moderne-reverse-proxy/>, 2.5.
 
 [nginx]: <https://www.nginx.com/>
 [plex]: <https://www.plex.tv/>
-[bittorrent]: <https://www.bittorrent.com/de/>
+[bittorrent]: <https://www.qbittorrent.org/>
