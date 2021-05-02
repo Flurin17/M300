@@ -4,7 +4,7 @@ TBZ 1.5.2021
 
 
 ## Inhaltsverzeichnis
-* Serice Beschreibung
+* Service Beschreibung
 * Service Anwendungsbereich
 * Grafische Übersicht
 * Code Beschreibung
@@ -19,7 +19,7 @@ Mein Docker Compose verbindet verschiedene Webapplikationen. Folgende Applikatio
 | [Plex][plex] | plexinc/pms-docker:latest | 
 | [BitTorrent][bittorrent] | ghcr.io/linuxserver/qbittorrent:latest |
 ## Service Anwendungsbereich
-Der Service kann für verschiedene Anwendungen verwendet werden, da der Nginx Reverse Proxy server vielseitig einsetzbar ist und so unendlich viele Services über ein Kontenpunkt erreicht werden können.
+Der Service kann für verschiedene Anwendungen verwendet werden, da der Nginx Reverse Proxy server vielseitig einsetzbar ist und so unendlich viele Services über ein Knotenpunkt erreicht werden können.
 Mein Einsatzzweck hier ist jedoch ein kleines Entertainmentsystem, welches Abspielen von Filmen, etc. möglich macht und das Herunterladen dieser Filme durch einen Torrentclient.
 Durch den Reverse Proxy können diese Systeme auf dem gleichen Docker angesprochen werden.
 
