@@ -50,25 +50,26 @@ networks:
 * Das Subnetz wird ebenfalls gesetzt.
 
 ### Container im Docker Compose
+(Einstellungen sind anwendbar auf alle Dockercontainer)
 ```
 plex:
-        image: plexinc/pms-docker
-        container_name: plex
-        environment:
-            - PUID=1000
-            - PGID=1000
-            - TZ=Europe/Zurich
-        volumes:
-            - /plex/library:/config
-            - /plex/tvseries:/tv
-            - /plex/movies:/movies
-        
-        networks:
-            media_network:
-                ipv4_address: 192.168.60.102
-        ports:
-            - 32400:32400
-        restart: unless-stopped
+    image: plexinc/pms-docker
+    container_name: plex
+    environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/Zurich
+    volumes:
+        - /plex/library:/config
+        - /plex/tvseries:/tv
+        - /plex/movies:/movies
+    
+    networks:
+        media_network:
+            ipv4_address: 192.168.60.102
+    ports:
+        - 32400:32400
+    restart: unless-stopped
 ```
 * Image
   * Wir setzen das erwünschte Image
