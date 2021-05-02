@@ -3,12 +3,18 @@
 
 
 ## Inhaltsverzeichnis
-* Service Beschreibung
-* Service Anwendungsbereich
-* Grafische Übersicht
-* Code Beschreibung
-* Testprotokoll
-* Quellenverzeichnis
+- [Leistungsbeurteilung 3 Modul 300](#leistungsbeurteilung-3-modul-300)
+  - [_Flurin Laim_ TBZ 2.5.2021](#flurin-laim-tbz-252021)
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [Service Beschreibung](#service-beschreibung)
+  - [Service Anwendungsbereich](#service-anwendungsbereich)
+  - [Grafische Übersicht](#grafische-übersicht)
+  - [Code Beschreibung](#code-beschreibung)
+    - [Nginx Docker Image erstellen](#nginx-docker-image-erstellen)
+    - [Netzwerkkonfiguration](#netzwerkkonfiguration)
+    - [Container im Docker Compose](#container-im-docker-compose)
+  - [Testprotokoll](#testprotokoll)
+  - [Quellenverzeichnis](#quellenverzeichnis)
 
 ## Service Beschreibung
 Mein Docker Compose verbindet verschiedene Webapplikationen. Folgende Applikationen werden verwendet:
@@ -95,6 +101,7 @@ plex:
 | docker-compose up -d| Alle drei Docker starten gleichzeitig | Alle drei Docker starten gleichzeitig |
 | 192.168.60.101 im Browser eingeben| Es öffnet sich nichts, da man die richtigen Endpoints angeben muss | Die Website funktioniert nicht, da dass docker-compose im Bridge Modus läuft. Der Service kann unter 127.0.0.1 erreicht werden |
 | 127.0.0.1/torrent im Browser eingeben | Der Torrent Dienst öffnet sich und das Loginformular erscheint | Der Torrent Dienst öffnet sich und das Loginformular erscheint |
+| Benutzername: admin Passwort: TBZ123admin | Der Torrent Dienst öffnet sich und das Loginformular erscheint | Der Torrent Dienst öffnet sich und das Loginformular erscheint |
 | 127.0.0.1/plex im Browser eingeben | Der Plex Dienst öffnet sich und das Loginformular erscheint | Leider funktioniert dies nicht, da die Konfiguration des Docker Containers von Plex anders als normal ist. Unter <http://127.0.0.1/plex/web/index.html#!/> funktioniert es ||
 | docker-compose logs in Powershell eingeben| Zeigt alle Logs die in den Container erstellt worden sind an | Zeigt alle Logs die in den Container erstellt worden sind an |
 
