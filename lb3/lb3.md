@@ -1,11 +1,6 @@
 # Leistungsbeurteilung 3 Modul 300
 ## _Flurin Laim_ TBZ 2.5.2021
-
-
 ## Inhaltsverzeichnis
-- [Leistungsbeurteilung 3 Modul 300](#leistungsbeurteilung-3-modul-300)
-  - [_Flurin Laim_ TBZ 2.5.2021](#flurin-laim-tbz-252021)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
   - [Service Beschreibung](#service-beschreibung)
   - [Service Anwendungsbereich](#service-anwendungsbereich)
   - [Grafische Übersicht](#grafische-übersicht)
@@ -23,10 +18,11 @@ Mein Docker Compose verbindet verschiedene Webapplikationen. Folgende Applikatio
 | ------ | ------ |
 | [Nginx][nginx] | nginx:latest |
 | [Plex][plex] | plexinc/pms-docker:latest | 
-| [qBitTorrent][bittorrent] | ghcr.io/linuxserver/qbittorrent:latest |
+| [qBitTorrent][bittorrent] | linuxserver/qbittorrent:latest |
+
 ## Service Anwendungsbereich
-Der Service kann für verschiedene Anwendungen verwendet werden, da der Nginx Reverse Proxy server vielseitig einsetzbar ist und so unendlich viele Services über ein Knotenpunkt erreicht werden können.
-Mein Einsatzzweck hier ist jedoch ein kleines Entertainmentsystem, welches Abspielen von Filmen, etc. möglich macht und das Herunterladen dieser Filme durch einen Torrentclient.
+Der Service kann für verschiedene Anwendungen verwendet werden, da der Nginx Reverse Proxy server vielseitig einsetzbar ist und so unendlich viele Services über ein Knotenpunkt erreicht werden können. <br>
+Mein Einsatzzweck hier ist jedoch ein kleines Entertainmentsystem, welches Abspielen von Filmen, etc. möglich macht und das Herunterladen dieser Filme durch einen Torrentclient. <br>
 Durch den Reverse Proxy können diese Systeme auf dem gleichen Docker angesprochen werden.
 
 ## Grafische Übersicht
@@ -109,10 +105,11 @@ plex:
 
 
 ## Sicherheit
-Um eine gewisse Sicherheit zu bieten habe ich das Standardpasswort von QBittorent gewechselt.
-Benutzername: admin
-Passwort: adminadmin -> TBZ123admin
+Um eine gewisse Sicherheit zu bieten habe ich das Standardpasswort von QBittorent gewechselt. <br>
+Benutzername: **admin** <br>
+Passwort: **adminadmin** -> **TBZ123admin**
 
+Diese Einstellung wird von meinem persistenten Volumen übernommen, heisst das Passwort bleibt gleich auch wenn der Container neustartet
 ## Quellenverzeichnis
 Grafik für Aufbau, <https://nexcon.ch/traefik-der-moderne-reverse-proxy/>, 2.5.2021
 
